@@ -37,7 +37,8 @@ img = io.imread(url)
 plt.imshow(img);
 ```
 
-By plotting the image you can now easily identify the desired section of the image and crop it accordingly by simple index slicing [c2v package](https://pypi.org/project/opencv-python/).
+By plotting the image you can now easily identify the desired section of the image and crop it accordingly with simple index slicing.
+
 
 ```python
 img_cropped = img[500:1500, 0:2048]
@@ -60,7 +61,7 @@ However, the results are rather discouraging:
 
 ```Gesundheit enthalten.``` is the only part identified as letters by pytesseract. This is because the other letters are not easily distinguishable from the background noise.
 
-## Improving OCR accuracy with Thresholding
+## Improving OCR Accuracy with Thresholding
 
 Luckily, there is a neat image manipulation trick for this sort of problem: Thresholding. This process basically turns all pixels that exceed a given value into another given value. The [cv2 package](https://pypi.org/project/opencv-python/) has five different types of thresholding and good explanations of their functioning [here](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html). 
 
