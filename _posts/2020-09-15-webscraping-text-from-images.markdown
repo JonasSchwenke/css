@@ -8,3 +8,5 @@ fig-caption: # Add figcaption (optional)
 tags: [Python, OCR]
 ---
 Social Scientists ...
+
+![Macbook]({{site.baseurl}}/assets/img/mac.jpg)
