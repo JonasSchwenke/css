@@ -49,7 +49,7 @@ plt.imshow(img_cropped);
 ```
 
 <p align="center">
-  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg"/>
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" width=800/>
 </p>
 
 Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is [pytesseract](https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves Google Books. Because this example is in German, you may need to download the language data set via ```brew install tesseract-lang```.
@@ -81,7 +81,7 @@ import cv2
 ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
 ```
 
-<center><img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/thresholding.jpg"/></center>
+<center><img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/thresholding.jpg" width=800/></center>
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
