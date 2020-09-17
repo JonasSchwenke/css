@@ -7,8 +7,8 @@ img: webscraping_images.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Python, OCR, images, text]
 ---
-Social Scientists often work with text data. But what if the desired text is part of an image and hence not directly scrapable with Selenium or BeautifulSoup?
-In that case Optical Character Recognition is needed to convert the image text into a string. In this example I will show you how to do that with the little help of a couple of Python packages.
+Social Scientists often work with text data. But what if the desired text is part of an image and hence not directly scrapable with ```Selenium``` or ```BeautifulSoup```? 
+In that case Optical Character Recognition (OCR) is needed to convert the image text into a string. In this example I will show you how to do that with the little help of a couple of Python packages.
 
 ## Example: Facebook Posts
 
@@ -24,7 +24,7 @@ English:
 To access this image in Python I used the [facebook-scraper package](pypi.org/project/facebook-scraper/) which returns all meta information about the scraped posts, including any image [URLs](https://scontent-zrh1-1.xx.fbcdn.net/v/t1.0-9/119551251_3859069730824010_1525164325381591588_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_ohc=i1l_QNfIiMkAX-mjbXc&_nc_ht=scontent-zrh1-1.xx&oh=962d8220995ab6f232386ecee2268608&oe=5F889D5E).
 
 As soon as you have your URL (wherever it may come from) you can use the following code to read the image into memory as a numpy array.
-For that you may need to install [scikit-image (skimage)](https://pypi.org/project/scikit-image/). You will also need matplotlib.
+For that you may need to install [scikit-image (skimage)](https://pypi.org/project/scikit-image/). You will also need matplotlib for plotting.
 
 ```python
 from skimage import io
@@ -52,7 +52,7 @@ plt.imshow(img_cropped);
   <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" />
 </p>
 
-Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is pytesseract(https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves for Google Books. Because this example is in German, you may also need to download the language data set via ```brew install tesseract-lang```.
+Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is [pytesseract](https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves Google Books. Because this example is in German, you may need to download the language data set via ```brew install tesseract-lang```.
 
 ```python
 import pytesseract
@@ -89,3 +89,5 @@ After performing OCR with pytesseract on the preprocessed image, the resulting s
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
 
 - [OCR with Python, OpenCV and PyTesseract](https://medium.com/@jaafarbenabderrazak.info/ocr-with-tesseract-opencv-and-python-d2c4ec097866)
+
+Please let me know about any errors or improvements in the comment section below!
