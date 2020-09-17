@@ -18,6 +18,8 @@ Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastis
   <img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/>
 </p>
 
+<center><img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/></center>
+
 English:
 > Kim Jong-Un always travels with his own portable toilet. This prevents his fecies, which contain information about his health, from getting into the wrong hands.
 
@@ -51,6 +53,7 @@ plt.imshow(img_cropped);
 <p align="center">
   <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" />
 </p>
+<center><img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg"/></center>
 
 Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is [pytesseract](https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves Google Books. Because this example is in German, you may need to download the language data set via ```brew install tesseract-lang```.
 
@@ -84,6 +87,8 @@ ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
 <p align="center">
   <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" />
 </p>
+
+<center><img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/thresholding.jpg"/></center>
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
