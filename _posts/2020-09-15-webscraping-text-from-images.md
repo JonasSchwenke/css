@@ -14,6 +14,7 @@ In that case Optical Character Recognition (OCR) is needed to convert the image 
 
 Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastisch) which posts interesting (and sometimes ridiculous) facts like this one:
 
+
 ![Image with text]({{site.baseurl}}/assets/img/faktastisch.jpg){: .center-image}
 
 English:
