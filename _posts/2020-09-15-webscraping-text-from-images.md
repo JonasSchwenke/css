@@ -53,6 +53,10 @@ Now that we have the desired text section of the image we need to apply Optical 
 ```python
 import pytesseract
 
+# plot
+plt.imshow(img_cropped);
+
+# print OCR output
 print(pytesseract.image_to_string(img_cropped, lang='deu'))
 ```
 
@@ -72,7 +76,13 @@ In this example the text is white, so we want all pixels, that are not perfectly
 import cv2
 
 # apply thresholding
-ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
+ret,img_thresh = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
+
+# plot
+plt.imshow(img_thresh);
+
+# print OCR output
+print(pytesseract.image_to_string(img_thresh, lang='deu'))
 ```
 
 ![OCR result after thresholding]({{site.baseurl}}/assets/img/thresholding.jpg)
