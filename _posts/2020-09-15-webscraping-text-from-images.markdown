@@ -5,16 +5,18 @@ date: 2020-09-15 13:32:20 +0300
 description: Find out how to convert text displayed on an image into a string with optical character recognition # Add post description (optional)
 img: webscraping_images.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Python, OCR]
+tags: [Python, OCR, images, text]
 ---
 Social Scientists often work with text data. But what if the desired text is part of an image and hence not directly scrapable with Selenium or BeautifulSoup?
 In that case Optical Character Recognition is needed to convert the image text into a string. In this example I will show you how to do that with the little help of a couple of Python packages.
 
 ## Example: Facebook Posts
 
-Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastisch) which posts interesting (and sometimes ridiculous) Facts like this one:
+Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastisch) which posts interesting (and sometimes ridiculous) facts like this one:
 
-![Image with text]({{site.baseurl}}/assets/img/faktastisch.jpg)
+<p align="center">
+  <img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/>
+</p>
 
 English:
 > Kim Jong-Un always travels with his own portable toilet. This prevents his fecies, which contain information about his health, from getting into the wrong hands.
@@ -46,7 +48,9 @@ img_cropped = img[500:1500, 0:2048]
 plt.imshow(img_cropped);
 ```
 
-![Image cropping]({{site.baseurl}}/assets/img/cropping.jpg)
+<p align="center">
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" />
+</p>
 
 Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is pytesseract(https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves for Google Books. Because this example is in German, you may also need to download the language data set via ```brew install tesseract-lang```.
 
@@ -59,7 +63,10 @@ print(pytesseract.image_to_string(img_cropped, lang='deu'))
 Via the ```image_to_string``` function and by specifying the desired language, pytesseract performs OCR for German on the cropped image.
 However, the results are rather discouraging:
 
-```Gesundheit enthalten.``` is the only part identified as letters by pytesseract. This is because the other letters are not easily distinguishable from the background noise.
+<br>
+```Gesundheit enthalten.``` 
+<br>
+is the only part identified as letters by pytesseract. This is because the other letters are not easily distinguishable from the background noise.
 
 ## Improving OCR Accuracy with Thresholding
 
@@ -74,7 +81,9 @@ import cv2
 ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
 ```
 
-![Image cropping]({{site.baseurl}}/assets/img/thresholding.jpg)
+<p align="center">
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" />
+</p>
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
