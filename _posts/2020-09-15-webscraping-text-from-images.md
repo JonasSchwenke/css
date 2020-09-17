@@ -17,7 +17,9 @@ Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastis
 
 <p align="center">
   <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg" width="300"/>
-</p>                           
+</p>
+
+![Image with text](https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg){: .center-image }
 
 English:
 > Kim Jong-un travels with his own mobile toilet. This is to prevent his excrements from falling into the wrong hands, as they contain information about his health.
