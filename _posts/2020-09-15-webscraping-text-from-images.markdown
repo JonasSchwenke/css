@@ -16,7 +16,7 @@ Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastis
 
 
 <p align="center">
-  <img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/>
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg" width="300"/>
 </p>
                                      
 
