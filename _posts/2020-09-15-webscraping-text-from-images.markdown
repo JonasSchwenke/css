@@ -15,12 +15,11 @@ In that case Optical Character Recognition (OCR) is needed to convert the image 
 Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastisch) which posts interesting (and sometimes ridiculous) facts like this one:
 
 <p align="center">
-  <img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/>
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg" width="300"/>
 </p>
 
-
 English:
-> Kim Jong-Un always travels with his own portable toilet. This prevents his fecies, which contain information about his health, from getting into the wrong hands.
+> Kim Jong-un travels with his own mobile toilet. This is to prevent his excrements from falling into the wrong hands, as they contain information about his health.
 
 To access this image in Python I used the [facebook-scraper package](pypi.org/project/facebook-scraper/) which returns all meta information about the scraped posts, including any image [URLs](https://scontent-zrh1-1.xx.fbcdn.net/v/t1.0-9/119551251_3859069730824010_1525164325381591588_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_ohc=i1l_QNfIiMkAX-mjbXc&_nc_ht=scontent-zrh1-1.xx&oh=962d8220995ab6f232386ecee2268608&oe=5F889D5E).
 
