@@ -19,8 +19,8 @@ Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastis
   <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg" width="300"/>
 </p>
 
-![Image with text](https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg){: .center-image }
-![I and My friends]({{site.baseurl}}/assets/img/faktastisch.jpg){: .center-image }
+```![Image with text](https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg){: .center-image }```
+![I and My friends]({{site.baseurl}}/assets/img/faktastisch.jpg){: .center-image .half-image-width}
 
 English:
 > Kim Jong-un travels with his own mobile toilet. This is to prevent his excrements from falling into the wrong hands, as they contain information about his health.
@@ -52,9 +52,7 @@ img_cropped = img[500:1500, 0:2048]
 plt.imshow(img_cropped);
 ```
 
-<p align="center">
-  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping.jpg" width=800/>
-</p>
+![Cropping image]({{site.baseurl}}/assets/img/cropping.jpg){: .center-image .half-image-width}
 
 Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is [pytesseract](https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves Google Books. Because this example is in German, you may need to download the language data set via ```brew install tesseract-lang```.
 
@@ -64,9 +62,7 @@ import pytesseract
 print(pytesseract.image_to_string(img_cropped, lang='deu'))
 ```
 
-<p align="center">
-  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping_ocr_result.jpg" width=400/>
-</p>
+![OCR result after cropping]({{site.baseurl}}/assets/img/cropping_ocr_result.jpg){: .center-image .half-image-width}
 
 Via the ```image_to_string``` function and by specifying the desired language, pytesseract performs OCR for German on the cropped image.
 However, the results are rather discouraging.
@@ -85,9 +81,7 @@ import cv2
 ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
 ```
 
-<p align="center">
-  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/thresholding.jpg" width=400/>
-</p>
+![OCR result after thresholding]({{site.baseurl}}/assets/img/cropping_ocr_result.jpg){: .center-image .half-image-width}
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
