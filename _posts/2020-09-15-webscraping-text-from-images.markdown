@@ -14,21 +14,11 @@ In that case Optical Character Recognition (OCR) is needed to convert the image 
 
 Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastisch) which posts interesting (and sometimes ridiculous) facts like this one:
 
-<p align="center">
-  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/faktastisch.jpg" width="300"/>
-</p>
 
 <p align="center">
   <img src="({{site.baseurl}}/assets/img/faktastisch.jpg" width="300"/>
 </p>
-
-<p align="center">
-  <img src="faktastisch.jpg"" width="300"/>
-</p>
-                                 
-<p align="center">
-![Image]({{site.baseurl}}/assets/img/faktastisch.jpg)
-</p>                                       
+                                     
 
 English:
 > Kim Jong-un travels with his own mobile toilet. This is to prevent his excrements from falling into the wrong hands, as they contain information about his health.
