@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Python, OCR, images, text]
 ---
 Social Scientists often work with text data. But what if the desired text is part of an image and hence not directly scrapable with ```Selenium``` or ```BeautifulSoup```? 
-In that case **Optical Character Recognition (OCR)** is needed to convert the image text into a string. In this example I will show you how to do that with the little help of a couple of Python packages.
+In that case **Optical Character Recognition (OCR)** is needed to convert the image text into a string. In this example I will show you how to do that with the little help from a couple of Python packages.
 
 ## Example: Facebook Posts
 
