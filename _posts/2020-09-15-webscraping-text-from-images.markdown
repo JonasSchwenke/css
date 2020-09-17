@@ -27,7 +27,7 @@ Let's take the popular German Facebook page [Faktastisch](facebook.com/faktastis
 </p>
                                  
 <p align="center">
-[Image](({{site.baseurl}}/assets/img/faktastisch.jpg)
+[Image]({{site.baseurl}}/assets/img/faktastisch.jpg)
 </p>                                       
 
 English:
