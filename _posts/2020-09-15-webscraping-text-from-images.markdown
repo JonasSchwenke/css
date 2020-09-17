@@ -59,11 +59,13 @@ import pytesseract
 
 print(pytesseract.image_to_string(img_cropped, lang='deu'))
 ```
-Output: ```Gesundheit enthalten.``` 
+
+<p align="center">
+  <img src="https://github.com/JonasSchwenke/css/blob/gh-pages/assets/img/cropping_ocr_result.jpg" width=400/>
+</p>
 
 Via the ```image_to_string``` function and by specifying the desired language, pytesseract performs OCR for German on the cropped image.
 However, the results are rather discouraging.
-
 Only the bottom part of the text can be identified as letters by pytesseract. This is because the other text is not easily distinguishable from the background noise.
 
 ## Improving OCR Accuracy with Thresholding
