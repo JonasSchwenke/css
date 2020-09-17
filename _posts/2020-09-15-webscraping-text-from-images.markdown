@@ -45,7 +45,7 @@ img_cropped = img[500:1500, 0:2048]
 plt.imshow(img_cropped);
 ```
 
-**** insert cropping.jpg ***
+![Image cropping]({{site.baseurl}}/assets/img/cropping.jpg)
 
 Now that we have the desired text section of the image we need to apply Optical Character Recognition (OCR). The best package for this task is pytesseract(https://pypi.org/project/pytesseract/), a Python wrapper for Tesseract, which also serves for Google Books. Because this example is in German, you may also need to download the language data set via ```brew install tesseract-lang```.
 
@@ -60,7 +60,7 @@ However, the results are rather discouraging:
 
 ```Gesundheit enthalten.``` is the only part identified as letters by pytesseract. This is because the other letters are not easily distinguishable from the background noise.
 
-## Preprocessing: Thresholding
+## Improving OCR accuracy with Thresholding
 
 Luckily, there is a neat image manipulation trick for this sort of problem: Thresholding. This process basically turns all pixels that exceed a given value into another given value. The [cv2 package](https://pypi.org/project/opencv-python/) has five different types of thresholding and good explanations of their functioning [here](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html). 
 
@@ -73,7 +73,7 @@ import cv2
 ret,thresh2 = cv2.threshold(img_cropped,200,255,cv2.THRESH_BINARY_INV)
 ```
 
-**** insert thresholding.jpg ****
+![Image cropping]({{site.baseurl}}/assets/img/thresholding.jpg)
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
 Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
