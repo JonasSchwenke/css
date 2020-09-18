@@ -70,7 +70,7 @@ Only the bottom part of the text can be identified as letters by pytesseract. Th
 
 Luckily, there is a neat image manipulation trick for this sort of problem: Thresholding. This process basically turns all pixels that exceed a given value into another given value. The [cv2 package](https://pypi.org/project/opencv-python/) has five different types of thresholding and good explanations of their functioning [here](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html). 
 
-In this example the text is white, so we want all pixels, that are not perfectly white to turn into black to get a uniform background for the text. Then the whole thing can be inversed for clear, black-on-white text. Here you might have to experiment a little with the values given to the ```cv2.threshold``` function. After a little back and forth of applying thresholding and plotting, I found these values to work perfectly for our example.
+In this example the text is white so we want all pixels that are not perfectly white to turn into black to get a uniform background for the text. Then the whole thing can be inversed using ```cv2.THRESH_BINARY_INV``` for clear, black-on-white text. Here you might have to experiment a little with the values given to the ```cv2.threshold``` function. After a little back and forth of applying thresholding and plotting, I found these values to work perfectly for our example.
 
 ```python
 import cv2
@@ -88,7 +88,7 @@ print(pytesseract.image_to_string(img_thresh, lang='deu'))
 ![OCR result after thresholding]({{site.baseurl}}/assets/img/thresholding.jpg)
 
 After performing OCR with pytesseract on the preprocessed image, the resulting string is a perfect representation of the text. It can now be used for further analysis or to create a dataset.
-Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic, I recommend this article:
+Depending on the images you have to work with, other preprocessing steps might be necessary. To move further into that topic I recommend this article:
 
 - [OCR with Python, OpenCV and PyTesseract](https://medium.com/@jaafarbenabderrazak.info/ocr-with-tesseract-opencv-and-python-d2c4ec097866)
 
